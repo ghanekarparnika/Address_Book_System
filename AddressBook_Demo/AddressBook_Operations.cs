@@ -49,5 +49,18 @@ namespace AddressBook_Demo
             con.Close();
 
         }
+
+
+        public static void Update()
+        {
+            string query = "update Contact set Last_Name='Deshmukh' where First_Name='Udit'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Updated data successfully");
+            Console.WriteLine("===============================");
+            con.Close();
+
+        }
     }
 }
